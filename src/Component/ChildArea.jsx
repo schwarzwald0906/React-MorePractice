@@ -1,9 +1,22 @@
+const style = {
+  width: "100%",
+  height: "200px",
+  backgroundColor: "khaki"
+};
+
 export const ChildArea = (props) => {
   const { open } = props;
+
+  console.log("再レンダリングが実行された！！");
+  const data = [...Array(2000).keys()];
+  data.forEach(() => {
+    console.log("...");
+  });
+
   return (
     <>
       {open ? (
-        <div>
+        <div style={style}>
           <p>子コンポーネント</p>
         </div>
       ) : null}
